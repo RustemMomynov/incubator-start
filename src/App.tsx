@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import logo from "./logo.svg";
 import Rating from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AppTitle />
+        <PageTitle title={"Заголовок страницы"} />
         <Rating value={2} />
         {/* <Accordion titleValue={"Menu"} />
         <Accordion titleValue={"Users"} /> */}
@@ -20,8 +20,12 @@ function App() {
   );
 }
 
-const AppTitle = () => {
-  return <div style={{ color: "white" }}>This is App component</div>;
+interface PageTitleTypes {
+  title: string;
+}
+
+const PageTitle: FC<PageTitleTypes> = ({ title }) => {
+  return <h1 style={{ color: "white" }}>{title}</h1>;
 };
 
 export default App;
