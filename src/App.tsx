@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import RatingComponent from "./components/Rating/Rating";
+import Rating from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import "./App.css";
 
@@ -9,9 +9,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <AppTitle />
-        <RatingComponent value={2} />
-        <Accordion />
-        <RatingComponent value={4} />
+        <Rating value={2} />
+        {/* <Accordion titleValue={"Menu"} />
+        <Accordion titleValue={"Users"} /> */}
+        <Rating value={4} />
+        <Rating value={1} />
+        <Rating value={5} />
       </header>
     </div>
   );

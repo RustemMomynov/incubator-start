@@ -1,18 +1,82 @@
 import { FC } from "react";
 
-interface RatingComponentProps {
+interface RatingProps {
   value: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
-const RatingComponent: FC<RatingComponentProps> = (value) => {
-  let ratingArray = [];
-
+const Rating: FC<RatingProps> = ({ value }) => {
+  if (value === 0) {
+    return (
+      <div>
+        <Star selected={false} />
+        <Star selected={false} />
+        <Star selected={false} />
+        <Star selected={false} />
+        <Star selected={false} />
+      </div>
+    );
+  }
+  if (value === 1) {
+    return (
+      <div>
+        <Star selected={true} />
+        <Star selected={false} />
+        <Star selected={false} />
+        <Star selected={false} />
+        <Star selected={false} />
+      </div>
+    );
+  }
+  if (value === 2) {
+    return (
+      <div>
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={false} />
+        <Star selected={false} />
+        <Star selected={false} />
+      </div>
+    );
+  }
+  if (value === 3) {
+    return (
+      <div>
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={false} />
+        <Star selected={false} />
+      </div>
+    );
+  }
+  if (value === 4) {
+    return (
+      <div>
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={false} />
+      </div>
+    );
+  }
+  if (value === 5) {
+    return (
+      <div>
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={true} />
+        <Star selected={true} />
+      </div>
+    );
+  }
   return (
     <div>
-      <Star selected={true} />
-      <Star selected={true} />
-      <Star selected={true} />
-      <Star selected={true} />
+      <Star selected={false} />
+      <Star selected={false} />
+      <Star selected={false} />
+      <Star selected={false} />
       <Star selected={false} />
     </div>
   );
@@ -32,4 +96,4 @@ const Star: FC<StarComponentProps> = ({ selected }) => {
   );
 };
 
-export default RatingComponent;
+export default Rating;

@@ -1,16 +1,16 @@
 import React from "react";
 
-const Accordion = () => {
+const Accordion = (props: any) => {
   return (
     <div style={{ color: "white" }}>
-      <AccordionTitle />
+      <AccordionTitle title={props.titleValue} />
       <AccordionBody />
     </div>
   );
 };
 
-const AccordionTitle = () => {
-  return <div className="accordion__title">Menu</div>;
+const AccordionTitle = (props: any) => {
+  return <div className="accordion__title">{props.title}</div>;
 };
 
 const AccordionBody = () => {
